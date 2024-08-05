@@ -48,6 +48,7 @@ export default function Todo() {
 
   return (
     <div>
+      <i class="ri-add-circle-fill"></i>
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-[200px] text-center text-[#eaeaea]">Todos</h1>
         <form onSubmit={handleSubmit}>
@@ -63,7 +64,13 @@ export default function Todo() {
             type="submit"
             className="border bg-[#008d8c] p-1 rounded-full text-white font-bold text-2xl w-10 text-center"
           >
-            +
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 11H7V13H11V17H13V13H17V11H13V7H11V11Z"></path>
+            </svg>
           </button>
         </form>
       </div>
@@ -76,7 +83,13 @@ export default function Todo() {
               onChange={() => toggleCompletion(todo.id)}
             />
 
-            <p>{todo.task}</p>
+            <p
+              style={{
+                textDecoration: todo.isCompleted ? "line-through" : "none",
+              }}
+            >
+              {todo.task}
+            </p>
             <div
               onClick={() => handleDelete(todo.id)}
               className="p-1 rounded-full text-white font-bold text-xl ml-[900px]"
