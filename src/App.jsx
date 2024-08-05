@@ -75,12 +75,11 @@ export default function Todo() {
               checked={todo.isCompleted}
               onChange={() => toggleCompletion(todo.id)}
             />
-            <p>
-              {todo.task}
-            </p>
+
+            <p>{todo.task}</p>
             <div
               onClick={() => handleDelete(todo.id)}
-              className="p-1 rounded-full text-white font-bold text-xl"
+              className="p-1 rounded-full text-white font-bold text-xl ml-[900px]"
             >
               <FaTrash className="text-[#ff2700] text-2xl font-extrabold " />
             </div>
