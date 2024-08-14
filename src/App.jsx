@@ -8,10 +8,6 @@ export default function Todo() {
   });
   const [task, setTask] = useState("");
 
-  // useEffect(() => {
-  //   const storedTodos = JSON.parse(localStorage.getItem("todos"));
-  //   setToDos(storedTodos);
-  // }, []);
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(toDos));
